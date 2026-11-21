@@ -35,10 +35,10 @@ import {
 const SESSION_DURATION_MS = 7 * 24 * 60 * 60 * 1000
 
 /** SIWE message domain */
-const SIWE_DOMAIN = typeof window !== 'undefined' ? window.location.host : 'galeon.xyz'
+const SIWE_DOMAIN = typeof window !== 'undefined' ? window.location.host : 'www.galeon.finance'
 
 /** SIWE message URI */
-const SIWE_URI = typeof window !== 'undefined' ? window.location.origin : 'https://galeon.xyz'
+const SIWE_URI = typeof window !== 'undefined' ? window.location.origin : 'https://www.galeon.finance'
 
 interface AuthContextValue {
   /** Current authenticated user (null if not logged in) */
