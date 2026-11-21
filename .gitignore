@@ -57,6 +57,10 @@ typechain-types/
 .vercel
 .railway
 
-# Sensitive budget drafts (kept local, not tracked)
+# Private business documents never go in this public repo (they live in the private ops repo)
+outputs/
 docs/BUDGET.md
 _archive/SCF-BUDGET-DRAFT.md
+*.xlsx
+*.docx
+*.pptx

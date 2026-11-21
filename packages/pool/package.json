@@ -46,7 +46,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mateodaza/galeon"
+    "url": "https://github.com/galeonprotocol/galeon"
   },
   "engines": {
     "node": ">=18"

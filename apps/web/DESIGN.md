@@ -96,11 +96,4 @@ When the domain changes, set `NEXT_PUBLIC_SITE_URL` (or the default in `lib/site
 
 ## Domain
 
-**Decided 24 October 2026: galeonprotocol.org.** Mateo registered it at Namecheap the same day (registry record: created 2026-10-24, expires 2028-10-24, transfer lock on, Namecheap DNS, no records yet). It was preferred over galeon.network because it says which Galeon this is (the name is shared with a yacht builder, a French health-records company and a finance product on Base), .org fits an open-source public good, and it renews at about USD 11 a year against about USD 35. No short alias is planned; galeon.finance does that job as a redirect.
-
-Cutover, in order:
-
-1. Namecheap: turn on auto-renew, keep the transfer lock, and consider registering it to CartagenaOnChain (the DPG Standard asks for clear ownership).
-2. Email: add forwarding for hello@galeonprotocol.org the same way galeon.finance does it, plus an SPF record. Forwarding only receives mail; sending from the address needs a mailbox provider and DKIM/DMARC. Keep hello@galeon.finance as the UNICEF contact until the switch is announced from that address. Then set `CONTACT_EMAIL` in `lib/site.ts` so "Write to the team" stops falling back to GitHub issues.
-3. Website: when the redesign ships, add galeonprotocol.org to the Vercel project that serves galeon.finance, make it the primary domain, and 301 galeon.finance to it path by path. Then set `NEXT_PUBLIC_SITE_URL=https://galeonprotocol.org` (or change the default in `lib/site.ts`), so canonical URLs, the sitemap and social cards follow. Do not switch the canonical before the domain resolves.
-4. Keep galeon.finance renewed through the UNICEF decision and any contract year, so its email and redirects keep working.
+**Decided 24 October 2026: galeonprotocol.org**, preferred over other options because it says which Galeon this is and .org fits an open-source public good. galeon.finance stays as a redirect. When the site moves, set `NEXT_PUBLIC_SITE_URL` (or the default in `lib/site.ts`) to the new domain and redeploy, so canonical URLs, the sitemap and social cards follow. Do not switch the canonical before the domain resolves.

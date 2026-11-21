@@ -2,15 +2,17 @@
 
 **Private payments for everyone.** Receive privately. Send privately. Prove what you need.
 
-Umbra hides receivers. Railgun hides senders. Galeon hides both — with compliance built in.
+Galeon protects both sides of a payment: who receives and where the money goes next, with compliance built in.
+
+> **Status (November 2026).** Research and prototype stage. Contracts from the 2025 Mantle hackathon are deployed on Mantle mainnet; the hosted backend is paused. **Galeon's code has not been audited.** The next network (Base is preferred) will be decided in December 2026. Website: [galeon.finance](https://www.galeon.finance).
 
 ## Overview
 
 On-chain payments are public by default. Galeon makes them private.
 
-**Receiving?** Payers send to one-time stealth addresses - no one can link payments to your wallet.
+**Receiving?** Payers send to one-time stealth addresses, so payments are not publicly linked to your main wallet.
 
-**Sending?** Withdraw through our Privacy Pool - ZK proofs break the trail between you and the recipient.
+**Sending?** Withdraw through the Privacy Pool: zero-knowledge proofs break the on-chain link between your deposit and your withdrawal.
 
 **Need compliance?** Generate Shipwreck reports to prove specific transactions without exposing your full history.
 
@@ -18,12 +20,12 @@ Galeon gives users financial privacy without sacrificing compliance — whether 
 
 ### Key Features
 
-- **Receive Privately**: Funds go to one-time stealth addresses that can't be linked to your identity
-- **Send Privately**: ZK mixing breaks the link between sender and recipient (Privacy Pool, built upon 0xbow)
+- **Receive Privately**: Funds go to one-time stealth addresses that are not publicly linked to your main wallet
+- **Send Privately**: A privacy pool with zero-knowledge proofs reduces linkability between deposit and withdrawal (built upon 0xbow)
 - **Port System**: Create named payment endpoints ("Donations", "Invoices") with unique keys
 - **Shipwreck**: Generate compliance reports to prove specific transactions when needed
 - **On-Chain Receipts**: Anchor payment metadata for verifiable records
-- **Mantle L2**: Low fees and fast finality
+- **EVM networks**: Deployed on Mantle today; network choice for the next release is under review
 
 ## Architecture
 
@@ -54,7 +56,7 @@ galeon/
 
 ```bash
 # Clone and install
-git clone https://github.com/mateodaza/galeon.git
+git clone https://github.com/galeonprotocol/galeon.git
 cd galeon
 pnpm install
 
@@ -111,8 +113,8 @@ Solidity smart contracts deployed on Mantle:
 **Privacy Pool v1 (built upon 0xbow):**
 
 - `GaleonEntrypoint`: Pool registry, ASP roots, deposit routing
-- `GaleonPrivacyPoolSimple`: Native currency (MNT/ETH) mixing pool
-- `GaleonPrivacyPoolComplex`: ERC-20 token mixing pool
+- `GaleonPrivacyPoolSimple`: Native currency (MNT/ETH) privacy pool
+- `GaleonPrivacyPoolComplex`: ERC-20 token privacy pool
 - Port-only deposits, verifiedBalance gating, UUPS upgradeable
 
 **Tests**: 194 passing (GaleonRegistry 46, PoolSimple 46, Entrypoint 41, PoolComplex 32, Announcer 17, ERC6538Registry 12)
@@ -293,11 +295,11 @@ All components are licensed for commercial use. See individual package LICENSE f
 
 ---
 
-Built for the Mantle Global Hackathon 2025
+Started at the Mantle Global Hackathon 2025.
 
 ## What Galeon Is
 
-Open-source, privacy-preserving payment infrastructure. Users receive at stealth addresses, withdraw through a ZK Privacy Pool, and generate compliance reports (Shipwreck) when needed. The Privacy Pool architecture is inherited from [0xbow](https://github.com/0xbow-io) (Apache-2.0, Oxorio-audited).
+Open-source, privacy-preserving payment infrastructure. Users receive at stealth addresses, withdraw through a ZK Privacy Pool, and generate compliance reports (Shipwreck) when needed. The Privacy Pool architecture is inherited from [0xbow](https://github.com/0xbow-io) (Apache-2.0). The upstream 0xbow contracts were audited by third parties; Galeon's modifications and additions have not been audited.
 
 **Use cases:** private payments, cash transfers, organisational disbursements.
 
@@ -306,7 +308,7 @@ Open-source, privacy-preserving payment infrastructure. Users receive at stealth
 **Roadmap:**
 
 1. ERC-20 stablecoin pool deployment (USDC, USDT)
-2. Real ASP sanctions screening (replacing hackathon auto-approve)
+2. Real ASP screening (replacing the prototype's automatic approval)
 3. Embedded email-based wallet onboarding (Privy)
 4. Client-side viewing-key custody
 5. Multi-chain deployment (chain selection based on pilot partner needs)
@@ -324,7 +326,7 @@ Open-source, privacy-preserving payment infrastructure. Users receive at stealth
 **Carlos Quintero** — Backend Engineer
 
 - 8+ years experience
-- Lead Backend at Giveth
+- Backend engineer at Giveth
 - Previously at Koombea (fintech, e-commerce)
 - Co-founder of Ethereum Colombia
 - [GitHub](https://github.com/CarlosQ96) · [LinkedIn](https://linkedin.com/in/carlos-quintero-076a36153)

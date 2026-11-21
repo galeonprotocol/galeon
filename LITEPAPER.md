@@ -4,6 +4,8 @@
 
 Version 0.1 | February 2026
 
+> **Status note (November 2026).** This paper describes the design. The hosted backend, including the ASP, is paused; contracts remain deployed on Mantle mainnet; nothing in Galeon's code has been audited; the network for the next release is being decided in December 2026.
+
 Authors: Mateo Daza, Carlos Quintero
 
 ---
@@ -94,7 +96,7 @@ In an allowlist model (the Privacy Pools approach), the default state is "nobody
 
 This creates a stronger compliance posture. Regulators and institutions can reason about the allowlist model more easily because the question changes from "can you prove this user is not bad?" to "can you prove this user was explicitly vetted?" The burden of proof shifts in a way that mirrors how traditional financial compliance works: you verify your customers, not retroactively check them against evolving lists.
 
-The trade-off is latency. In a blocklist model, withdrawals are instant because the default is approval. In an allowlist model, there is a window between deposit and ASP approval where funds cannot be privately withdrawn. Galeon's ASP currently auto-approves every 15 seconds, keeping this window minimal for legitimate users.
+The trade-off is latency. In a blocklist model, withdrawals are instant because the default is approval. In an allowlist model, there is a window between deposit and ASP approval where funds cannot be privately withdrawn. In the prototype, the ASP approved deposits automatically within seconds; real screening replaces that before any production use.
 
 The ASP also creates an important safety valve. If the ASP discovers that a previously approved deposit was made with illicit funds, it can exclude that label from future root updates. The deposit remains in the pool, but the depositor can no longer withdraw privately. They can still ragequit (reclaiming funds publicly), but the anonymity set is preserved for everyone else. This is a surgical response compared to the blocklist model, where the entire pool's reputation is affected by the presence of flagged funds.
 
@@ -150,7 +152,7 @@ Galeon is transparent about its current trust assumptions. These are engineering
 
 **Public Port labels.** Port names (such as "Freelance" or "Donations") are stored on-chain and visible to anyone. Users should be aware of this when naming Ports. The path forward is storing only hashes on-chain with encrypted labels managed client-side.
 
-**No external users.** The protocol is working on EVM mainnet, but all activity to date is from the development team. The anonymity set is currently empty in practice. Privacy guarantees strengthen as more users deposit into the pool.
+**No production users.** Activity so far (about 81 deposits from 14 users) comes from the development team and early testers during the hackathon period. The anonymity set is too small to rely on. Privacy guarantees strengthen as more users deposit into the pool.
 
 These limitations are intentional trade-offs, not oversights. Galeon follows a model of progressive decentralization: start from a position where compliance is possible and the system works, then systematically reduce trust assumptions as the protocol matures.
 

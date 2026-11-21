@@ -673,7 +673,7 @@ Covenant functionality is added directly to GaleonRegistry (see full contract be
 │   ┌─────────────────────────────────────────────────────────┐   │
 │   │  1. Signs Covenant                                       │   │
 │   │  2. Creates Port (payment link)                          │   │
-│   │  3. Shares: "Pay me at galeon.xyz/pay/alice"            │   │
+│   │  3. Shares: "Pay me at galeon.finance/pay/alice"            │   │
 │   └─────────────────────────────────────────────────────────┘   │
 │         │                                                        │
 │         │ Shares link with clients                               │
