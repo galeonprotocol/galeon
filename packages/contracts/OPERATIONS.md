@@ -545,5 +545,5 @@ pool.currentTreeSize() returns (uint256)
 
 ## Support
 
-- GitHub Issues: https://github.com/mateodaza/galeon/issues
+- GitHub Issues: https://github.com/galeonprotocol/galeon/issues
 - Mantlescan: https://mantlescan.xyz

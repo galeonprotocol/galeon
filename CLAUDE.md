@@ -1,6 +1,6 @@
 # Galeon
 
-Private payments using EIP-5564 stealth addresses. Mantle Hackathon 2025.
+Open-source privacy protocol: EIP-5564 stealth addresses, privacy pools and selective disclosure. Started at the Mantle Hackathon 2025.
 
 ## Critical Files
 

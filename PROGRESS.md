@@ -3,6 +3,8 @@
 > Global tracker synced with app/package progress files.
 > Last updated: 2026-01-09
 
+> **Status (November 2026).** This file records the hackathon build (phases 1–3, January 2026). Since then: contracts remain on Mantle mainnet, the hosted backend is paused, the public site was rebuilt (October 2026), and the next phase is planned (network decision due December 2026). Galeon's code has not been audited.
+
 ## Current Phase: 3 - Polish + Submission
 
 ### Phase 1: Foundation ✅
@@ -14,7 +16,7 @@
 | Turborepo setup | Done    | -     | Monorepo structure created                               |
 | Railway infra   | Done    | -     | PostgreSQL + Redis configured                            |
 | AdonisJS API    | Done    | -     | Models, SIWE auth, JWT refresh, Fog payments - 145 tests |
-| Stealth library | Done    | -     | 34 tests, audited, documented (README.md)                |
+| Stealth library | Done    | -     | 34 tests, internally reviewed, documented (README.md)    |
 | Contracts       | Done    | -     | 216 tests (Privacy Pool v1), deployed to Mantle Mainnet  |
 | Ponder indexer  | Done    | -     | Event handlers, schema, REST API (direct DB access)      |
 | Port Intent     | Done    | -     | Frontend creates intent → chain tx → backend confirms    |
@@ -99,7 +101,7 @@
 
 | Task                     | Status      | Owner | Notes                                                           |
 | ------------------------ | ----------- | ----- | --------------------------------------------------------------- |
-| Spec document            | Done        | -     | Account Model v0.2.0, audited                                   |
+| Spec document            | Done        | -     | Account Model v0.2.0, reviewed                                  |
 | ASP auto-approve service | Not Started | -     | Unblocks current withdrawals                                    |
 | MergeDeposit circuit     | Draft       | -     | `packages/0xbow/packages/circuits/circuits/mergeDeposit.circom` |
 | Verifier generation      | Not Started | -     | Dev keys for testing                                            |

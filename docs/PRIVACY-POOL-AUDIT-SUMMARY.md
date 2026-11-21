@@ -281,7 +281,7 @@ packages/contracts/contracts/privacy-pool/
 
 1. `ProofLib.sol` - Direct copy
 2. `Constants.sol` - Direct copy
-3. Verifier contracts - Generated from audited circuits
+3. Verifier contracts - Generated from 0xbow's circuits (audited upstream). Galeon's own merge circuit and its verifier are not audited.
 
 ---
 
