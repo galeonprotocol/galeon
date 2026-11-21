@@ -1370,7 +1370,7 @@ function tryDeriveStealthAddress(
 │     → Verify signature matches message                                   │
 │     → Check nonce exists in Redis (replay protection)                    │
 │     → Delete nonce from Redis (one-time use)                             │
-│     → Verify domain matches (galeon.xyz)                                 │
+│     → Verify domain matches (galeon.finance)                                 │
 │     Response: { token, user }                                            │
 │                                                                          │
 │  4. Frontend: Store token, use for all requests                          │
@@ -1386,7 +1386,7 @@ function tryDeriveStealthAddress(
 │  • Reusing nonce → "Invalid or expired nonce" error                      │
 │                                                                          │
 │  SIWE MESSAGE VALIDATION:                                                │
-│  • Domain: must match "galeon.xyz" (or localhost in dev)                 │
+│  • Domain: must match "galeon.finance" (or localhost in dev)                 │
 │  • URI: must match API origin                                            │
 │  • Issued At: must be within last 5 minutes                              │
 │  • Expiration Time: must be in future (if present)                       │
@@ -1454,7 +1454,7 @@ const VIEWING_KEY_MESSAGE = `Galeon Key Derivation
 This signature unlocks your viewing keys for this session.
 It does NOT authorize any transactions.
 
-Domain: galeon.xyz
+Domain: galeon.finance
 Action: Unlock viewing keys
 Nonce: ${sessionNonce}`
 
@@ -1463,7 +1463,7 @@ const SPENDING_KEY_MESSAGE = `Galeon Collection Authorization
 
 This signature authorizes collecting funds from your Ports.
 
-Domain: galeon.xyz
+Domain: galeon.finance
 Action: Derive spending keys
 Ports: ${selectedPortIds.join(', ')}
 Nonce: ${collectionNonce}`
@@ -1555,8 +1555,8 @@ Before merging:
 | Service              | Platform       | URL                | Command          |
 | -------------------- | -------------- | ------------------ | ---------------- |
 | **Next.js** (web)    | Vercel         | galeon.vercel.app  | `vercel --prod`  |
-| **AdonisJS** (api)   | Railway        | api.galeon.xyz     | `railway up`     |
-| **Ponder** (indexer) | Railway        | indexer.galeon.xyz | `railway up`     |
+| **AdonisJS** (api)   | Railway        | api.galeon.finance     | `railway up`     |
+| **Ponder** (indexer) | Railway        | indexer.galeon.finance | `railway up`     |
 | **PostgreSQL**       | Railway        | (internal)         | Auto-provisioned |
 | **Redis**            | Railway        | (internal)         | Auto-provisioned |
 | **Contracts**        | Mantle Sepolia | Mantlescan         | `pnpm deploy`    |

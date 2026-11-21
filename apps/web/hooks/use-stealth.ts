@@ -16,7 +16,12 @@ import {
   type StealthKeys,
 } from '@galeon/stealth'
 
-/** Message for deriving stealth keys */
+/**
+ * Message for deriving stealth keys.
+ * DO NOT EDIT, not even the domain line: users sign this exact text to derive
+ * their stealth keys, so any change gives everyone different keys and the app
+ * loses access to funds at their existing stealth addresses.
+ */
 const KEY_DERIVATION_MESSAGE = `Galeon Key Derivation
 
 This signature unlocks your stealth keys for this session.
