@@ -9,6 +9,14 @@ Private payments using EIP-5564 stealth addresses. Mantle Hackathon 2025.
 - `apps/*/PROGRESS.md` - App-specific progress
 - `packages/*/PROGRESS.md` - Package-specific progress
 
+## Repository and Ops
+
+- Repo lives at `github.com/galeonprotocol/galeon` (moved from `mateodaza/galeon`, 21 Nov 2026). Push access: Mateo and Carlos only.
+- This repo stays **public**. Security-sensitive work (unfixed vulnerabilities, review findings before fixes) stays private until fixed.
+- All non-code work (grant status, deadlines, decisions, contracts, money rules) lives in the private repo `galeonprotocol/galeon-ops` (local: `../galeon-ops`). Read its `CLAUDE.md`, `STATUS.md` and `DEADLINES.md` before planning work, and record decisions there, not here. Never copy private ops content into this public repo.
+- Technical work is tracked here (issues, PRs, public project board); ops tasks are tracked in `galeon-ops`.
+- Vercel (`galeon-web`) is connected to this repo. Railway is intentionally **not** connected while production is stopped: reconnecting makes every push to `main` redeploy the worker and scheduler.
+
 ## Commands
 
 ```bash
